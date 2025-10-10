@@ -2,10 +2,12 @@ export default function Home() {
   return (
     <>
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-harteck-red/30">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold tracking-tight">HTK CORP</div>
-          <button className="px-6 py-2 bg-white text-black font-medium hover:bg-gray-200 transition-colors">
+          <div className="text-2xl font-bold tracking-tight">
+            HTK <span className="text-harteck-red">CORP</span>
+          </div>
+          <button className="px-6 py-2 bg-harteck-red text-white font-medium hover:bg-harteck-red-light transition-colors">
             Consultoria Técnica
           </button>
         </div>
@@ -24,19 +26,19 @@ export default function Home() {
             <br />
             Não vendemos especificações. Entregamos sistemas validados, afinados, provados.
           </p>
-          <button className="mt-8 px-8 py-4 bg-white text-black text-lg font-medium hover:bg-gray-200 transition-colors">
+          <button className="mt-8 px-8 py-4 bg-harteck-red text-white text-lg font-medium hover:bg-harteck-red-light transition-colors shadow-lg shadow-harteck-red/20">
             Agende uma consultoria técnica →
           </button>
         </div>
       </section>
 
       {/* Credibility Bar */}
-      <section className="border-y border-white/10 bg-white/5">
+      <section className="border-y border-harteck-red/20 bg-harteck-red/5">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center text-sm text-gray-400">
-            <div>Multi-recordista mundial em overclock</div>
-            <div>Maior modder de GPUs do mundo</div>
-            <div>15+ anos refinando performance extrema</div>
+            <div><span className="text-harteck-red font-bold">●</span> Multi-recordista mundial em overclock</div>
+            <div><span className="text-harteck-red font-bold">●</span> Maior modder de GPUs do mundo</div>
+            <div><span className="text-harteck-red font-bold">●</span> 15+ anos refinando performance extrema</div>
           </div>
         </div>
       </section>
@@ -62,17 +64,17 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12">
             <div className="space-y-4">
-              <div className="text-6xl font-bold text-white/10">01</div>
+              <div className="text-6xl font-bold text-harteck-red/20">01</div>
               <h3 className="text-xl font-bold">Escolha cirúrgica de componentes</h3>
               <p className="text-gray-400">Não é hype; é engenharia.</p>
             </div>
             <div className="space-y-4">
-              <div className="text-6xl font-bold text-white/10">02</div>
+              <div className="text-6xl font-bold text-harteck-red/20">02</div>
               <h3 className="text-xl font-bold">Integração meticulosa</h3>
               <p className="text-gray-400">Hardware, firmware e software afinados como um único sistema.</p>
             </div>
             <div className="space-y-4">
-              <div className="text-6xl font-bold text-white/10">03</div>
+              <div className="text-6xl font-bold text-harteck-red/20">03</div>
               <h3 className="text-xl font-bold">Validação em carga real</h3>
               <p className="text-gray-400">Benchmarks, stress, telemetria e ajustes finos até o último MHz estável.</p>
             </div>
@@ -122,44 +124,44 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Gaming Extremo */}
-            <div className="border border-white/10 p-8 hover:border-white/30 transition-colors">
-              <h3 className="text-2xl font-bold mb-4">Gaming Extremo</h3>
+            <div className="border border-harteck-red/20 p-8 hover:border-harteck-red transition-colors bg-black/50">
+              <h3 className="text-2xl font-bold mb-4 text-harteck-red">Gaming Extremo</h3>
               <p className="text-gray-400 mb-6">
                 Para o competitivo que mede vitórias em milissegundos.
                 Para o entusiasta que exige o topo absoluto.
               </p>
               <ul className="space-y-3 text-sm text-gray-400">
-                <li>→ FPS consistente acima de 360Hz</li>
-                <li>→ Latência sub-1ms</li>
-                <li>→ Cooling silencioso mesmo sob carga extrema</li>
+                <li><span className="text-harteck-red">→</span> FPS consistente acima de 360Hz</li>
+                <li><span className="text-harteck-red">→</span> Latência sub-1ms</li>
+                <li><span className="text-harteck-red">→</span> Cooling silencioso mesmo sob carga extrema</li>
               </ul>
             </div>
 
             {/* Workstation AI/ML */}
-            <div className="border border-white/10 p-8 hover:border-white/30 transition-colors">
-              <h3 className="text-2xl font-bold mb-4">Workstation AI/ML</h3>
+            <div className="border border-harteck-red/20 p-8 hover:border-harteck-red transition-colors bg-black/50">
+              <h3 className="text-2xl font-bold mb-4 text-harteck-red">Workstation AI/ML</h3>
               <p className="text-gray-400 mb-6">
                 Para quem treina modelos localmente.
                 Para quem não pode esperar o cloud responder.
               </p>
               <ul className="space-y-3 text-sm text-gray-400">
-                <li>→ Multi-GPU otimizado para CUDA/ROCm</li>
-                <li>→ Throughput validado em cargas reais</li>
-                <li>→ Estabilidade térmica 24/7</li>
+                <li><span className="text-harteck-red">→</span> Multi-GPU otimizado para CUDA/ROCm</li>
+                <li><span className="text-harteck-red">→</span> Throughput validado em cargas reais</li>
+                <li><span className="text-harteck-red">→</span> Estabilidade térmica 24/7</li>
               </ul>
             </div>
 
             {/* Enterprise Performance */}
-            <div className="border border-white/10 p-8 hover:border-white/30 transition-colors">
-              <h3 className="text-2xl font-bold mb-4">Enterprise Performance</h3>
+            <div className="border border-harteck-red/20 p-8 hover:border-harteck-red transition-colors bg-black/50">
+              <h3 className="text-2xl font-bold mb-4 text-harteck-red">Enterprise Performance</h3>
               <p className="text-gray-400 mb-6">
                 Para empresas onde downtime custa seis dígitos.
                 Para operações que exigem confiabilidade inabalável.
               </p>
               <ul className="space-y-3 text-sm text-gray-400">
-                <li>→ Componentes enterprise-grade testados individualmente</li>
-                <li>→ Redundância térmica e elétrica</li>
-                <li>→ Suporte técnico direto com quem construiu</li>
+                <li><span className="text-harteck-red">→</span> Componentes enterprise-grade testados individualmente</li>
+                <li><span className="text-harteck-red">→</span> Redundância térmica e elétrica</li>
+                <li><span className="text-harteck-red">→</span> Suporte técnico direto com quem construiu</li>
               </ul>
             </div>
           </div>
@@ -175,7 +177,7 @@ export default function Home() {
 
           <div className="space-y-16">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-              <div className="md:col-span-2 text-6xl font-bold text-white/10">01</div>
+              <div className="md:col-span-2 text-6xl font-bold text-harteck-red/30">01</div>
               <div className="md:col-span-10 space-y-4">
                 <h3 className="text-2xl font-bold">Seleção</h3>
                 <p className="text-gray-400 text-lg">
@@ -186,7 +188,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-              <div className="md:col-span-2 text-6xl font-bold text-white/10">02</div>
+              <div className="md:col-span-2 text-6xl font-bold text-harteck-red/30">02</div>
               <div className="md:col-span-10 space-y-4">
                 <h3 className="text-2xl font-bold">Integração</h3>
                 <p className="text-gray-400 text-lg">
@@ -197,7 +199,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-              <div className="md:col-span-2 text-6xl font-bold text-white/10">03</div>
+              <div className="md:col-span-2 text-6xl font-bold text-harteck-red/30">03</div>
               <div className="md:col-span-10 space-y-4">
                 <h3 className="text-2xl font-bold">Validação</h3>
                 <p className="text-gray-400 text-lg">
@@ -208,7 +210,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-              <div className="md:col-span-2 text-6xl font-bold text-white/10">04</div>
+              <div className="md:col-span-2 text-6xl font-bold text-harteck-red/30">04</div>
               <div className="md:col-span-10 space-y-4">
                 <h3 className="text-2xl font-bold">Entrega</h3>
                 <p className="text-gray-400 text-lg">
@@ -231,18 +233,18 @@ export default function Home() {
             Agende uma consultoria técnica gratuita.
             Vamos entender sua necessidade e construir a máquina exata para seu caso de uso.
           </p>
-          <button className="mt-8 px-8 py-4 bg-white text-black text-lg font-medium hover:bg-gray-200 transition-colors">
+          <button className="mt-8 px-8 py-4 bg-harteck-red text-white text-lg font-medium hover:bg-harteck-red-light transition-colors shadow-lg shadow-harteck-red/20">
             Falar com especialista →
           </button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-12 px-6">
+      <footer className="border-t border-harteck-red/20 py-12 px-6 bg-harteck-red/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4">
-            <div className="text-2xl font-bold">HTK CORP</div>
-            <p className="text-gray-400 text-sm">Uma divisão Harteck</p>
+            <div className="text-2xl font-bold">HTK <span className="text-harteck-red">CORP</span></div>
+            <p className="text-gray-400 text-sm">Uma divisão <span className="text-harteck-red font-semibold">Harteck</span></p>
             <p className="text-gray-500 text-sm">Teclab | Overclock & Modding desde 2010</p>
           </div>
         </div>

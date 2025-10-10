@@ -7,7 +7,15 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        harteck: {
+          red: '#DC2626', // Vermelho Harteck principal
+          'red-dark': '#991B1B',
+          'red-light': '#EF4444',
+        },
+      },
+    },
   },
   plugins: [],
 };
