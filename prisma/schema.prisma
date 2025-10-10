@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  password      String
+  name          String?
+  role          String    @default("admin") // admin ou super_admin
+  approved      Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  invitedBy     String?
+  invites       Invite[]  @relation("InviterUser")
+}
+
+model Invite {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  token       String   @unique
+  invitedBy   String
+  inviter     User     @relation("InviterUser", fields: [invitedBy], references: [id])
+  used        Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  expiresAt   DateTime
+}
+
+model Content {
+  id        String   @id @default(cuid())
+  key       String   @unique  // hero.title, hero.subtitle, etc
+  value     String   // O conteúdo em si
+  type      String   // text, image, link, etc
+  updatedAt DateTime @updatedAt
+}
+
+model Image {
+  id        String   @id @default(cuid())
+  key       String   @unique  // gaming_pc, ai_pc, etc
+  url       String   // URL da imagem
+  alt       String?
+  updatedAt DateTime @updatedAt
+}
