@@ -26,7 +26,7 @@ export default function AdminLogin() {
       if (result?.error) {
         setError("Email ou senha inválidos")
       } else {
-        router.push("/admin/dashboard")
+        router.push("/admin/editor")
         router.refresh()
       }
     } catch (error) {

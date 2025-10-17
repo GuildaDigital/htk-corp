@@ -10,7 +10,7 @@ export default auth((req) => {
   }
 
   if (isLoginPage && req.auth) {
-    return NextResponse.redirect(new URL("/admin/dashboard", req.url))
+    return NextResponse.redirect(new URL("/admin/editor", req.url))
   }
 
   return NextResponse.next()
