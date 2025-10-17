@@ -17,5 +17,6 @@ export default auth((req) => {
 })
 
 export const config = {
-  matcher: ["/admin/:path*"]
+  matcher: ["/admin/:path*"],
+  runtime: 'nodejs' // Força uso do Node.js runtime para suportar Prisma e bcrypt
 }

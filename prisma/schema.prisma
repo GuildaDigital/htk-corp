@@ -50,3 +50,44 @@ model Image {
   alt       String?
   updatedAt DateTime @updatedAt
 }
+
+// Modelo para elementos editáveis com controle completo de estilos
+model EditableElement {
+  id            String   @id @default(cuid())
+  key           String   @unique  // hero.title, hero.subtitle, nav.button, etc
+  content       String
+  
+  // Tipografia
+  fontSize      String?  // Ex: "text-6xl", "text-2xl", ou valor custom "48px"
+  fontWeight    String?  // Ex: "font-bold", "font-medium", ou "700"
+  fontFamily    String?  // Ex: "font-sans", ou custom
+  lineHeight    String?  // Ex: "leading-tight", ou "1.2"
+  letterSpacing String?  // Ex: "tracking-tight", ou "0.05em"
+  
+  // Cores
+  textColor     String?  // Ex: "text-white", "text-harteck-red", ou hex "#DC2626"
+  bgColor       String?  // Ex: "bg-black", "bg-harteck-red/10"
+  
+  // Espaçamento
+  padding       String?  // Ex: "p-6", "px-4 py-2"
+  margin        String?  // Ex: "mt-8", "mx-auto"
+  
+  // Layout & Display
+  display       String?  // Ex: "block", "flex", "inline-block"
+  alignment     String?  // Ex: "text-center", "items-center"
+  
+  // Efeitos
+  animation     String?  // Ex: "animate-fade-in", "animate-slide-up"
+  transition    String?  // Ex: "transition-all duration-300"
+  hover         String?  // Classes hover, ex: "hover:bg-harteck-red-light"
+  
+  // CSS Custom (para casos avançados)
+  customCSS     String?  // JSON ou CSS direto
+  
+  // Metadata
+  section       String?  // Ex: "hero", "nav", "footer" - para organização
+  elementType   String?  // Ex: "heading", "paragraph", "button", "link"
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
