@@ -30,47 +30,63 @@ export async function POST(request: Request) {
     }
 
     if (action === "seed-elements") {
-      // Seed editable elements
+      // Seed editable elements com conteúdo corporativo correto
       const elements = [
         // Navigation
         { key: "nav.logo", content: "HTK", section: "nav", elementType: "text", textColor: "text-white", fontWeight: "font-bold", fontSize: "text-2xl" },
-        { key: "nav.cta", content: "Fale com especialista →", section: "nav", elementType: "button", textColor: "text-white", bgColor: "bg-harteck-red", padding: "px-6 py-2", hover: "hover:bg-harteck-red-light" },
+        { key: "nav.logo.accent", content: "CORP", section: "nav", elementType: "text", textColor: "text-harteck-red", fontWeight: "font-bold", fontSize: "text-2xl" },
+        { key: "nav.button", content: "Consultoria Técnica", section: "nav", elementType: "button", textColor: "text-white", bgColor: "bg-harteck-red", padding: "px-6 py-2", hover: "hover:bg-harteck-red-light" },
         
-        // Hero Section
-        { key: "hero.title", content: "Performance que existe fora do PowerPoint.", section: "hero", elementType: "heading", fontSize: "text-6xl", fontWeight: "font-bold", textColor: "text-white", lineHeight: "leading-tight" },
-        { key: "hero.subtitle", content: "Computadores de alta performance para quem precisa de resultados reais, não de especulação.", section: "hero", elementType: "paragraph", fontSize: "text-xl", textColor: "text-gray-400", margin: "mt-6" },
-        { key: "hero.cta", content: "Agende uma consultoria técnica →", section: "hero", elementType: "button", bgColor: "bg-harteck-red", textColor: "text-white", padding: "px-8 py-4", fontSize: "text-lg", fontWeight: "font-medium", hover: "hover:bg-harteck-red-light", transition: "transition-colors" },
+        // Hero Section - Conteúdo Corporativo
+        { key: "hero.title", content: "Tecnologia que não compromete sua operação.", section: "hero", elementType: "heading", fontSize: "text-6xl md:text-8xl", fontWeight: "font-bold", textColor: "text-white", lineHeight: "leading-tight" },
+        { key: "hero.subtitle", content: "", section: "hero", elementType: "text", fontSize: "text-transparent", textColor: "bg-clip-text bg-gradient-to-r from-gray-400 via-gray-300 to-gray-400" },
+        { key: "hero.description", content: "Workstations corporativas construídas sob medida para empresas que não podem parar. Suporte 24/7 na Grande São Paulo. Máquina reserva durante manutenção.", section: "hero", elementType: "paragraph", fontSize: "text-xl md:text-2xl", textColor: "text-gray-400", lineHeight: "leading-relaxed" },
+        { key: "hero.cta", content: "Agende uma consultoria técnica →", section: "hero", elementType: "button", bgColor: "bg-harteck-red", textColor: "text-white", padding: "px-10 py-5", fontSize: "text-lg", fontWeight: "font-medium", hover: "hover:bg-harteck-red-light", transition: "transition-all duration-300" },
         
-        // Credibility Section
-        { key: "credibility.title", content: "Performance comprovada", section: "credibility", elementType: "heading", fontSize: "text-4xl", fontWeight: "font-bold", textColor: "text-white" },
-        { key: "credibility.stat1.number", content: "50+", section: "credibility", elementType: "text", fontSize: "text-5xl", fontWeight: "font-bold", textColor: "text-harteck-red" },
-        { key: "credibility.stat1.label", content: "Builds entregues", section: "credibility", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
-        { key: "credibility.stat2.number", content: "98%", section: "credibility", elementType: "text", fontSize: "text-5xl", fontWeight: "font-bold", textColor: "text-harteck-red" },
-        { key: "credibility.stat2.label", content: "Taxa de satisfação", section: "credibility", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
-        { key: "credibility.stat3.number", content: "24/7", section: "credibility", elementType: "text", fontSize: "text-5xl", fontWeight: "font-bold", textColor: "text-harteck-red" },
-        { key: "credibility.stat3.label", content: "Suporte técnico", section: "credibility", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
+        // Credibility Bar
+        { key: "credibility.1", content: "Multi-recordista mundial em overclock", section: "credibility", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
+        { key: "credibility.2", content: "Maior modder de GPUs do mundo", section: "credibility", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
+        { key: "credibility.3", content: "15+ anos refinando performance extrema", section: "credibility", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
         
         // Showcase Section
-        { key: "showcase.title", content: "Builds que impressionam", section: "showcase", elementType: "heading", fontSize: "text-4xl", fontWeight: "font-bold", textColor: "text-white", margin: "mb-12" },
-        { key: "showcase.pc1.name", content: "Gaming Beast", section: "showcase", elementType: "heading", fontSize: "text-2xl", fontWeight: "font-bold", textColor: "text-white" },
-        { key: "showcase.pc1.specs", content: "RTX 4090 • i9-14900K • 64GB DDR5", section: "showcase", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
-        { key: "showcase.pc1.price", content: "R$ 25.990", section: "showcase", elementType: "text", fontSize: "text-3xl", fontWeight: "font-bold", textColor: "text-harteck-red" },
-        { key: "showcase.pc2.name", content: "AI Powerhouse", section: "showcase", elementType: "heading", fontSize: "text-2xl", fontWeight: "font-bold", textColor: "text-white" },
-        { key: "showcase.pc2.specs", content: "RTX 4080 • Ryzen 9 7950X • 128GB DDR5", section: "showcase", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
-        { key: "showcase.pc2.price", content: "R$ 32.990", section: "showcase", elementType: "text", fontSize: "text-3xl", fontWeight: "font-bold", textColor: "text-harteck-red" },
+        { key: "showcase.title", content: "Máquinas que", section: "showcase", elementType: "heading", fontSize: "text-5xl md:text-6xl", fontWeight: "font-bold", textColor: "text-white" },
+        { key: "showcase.title.accent", content: "definem recordes", section: "showcase", elementType: "text", textColor: "text-transparent bg-clip-text bg-gradient-to-r from-harteck-red to-harteck-red-light" },
+        
+        { key: "pc.gaming.title", content: "GAMING BEAST", section: "showcase", elementType: "heading", fontSize: "text-xl", fontWeight: "font-bold", textColor: "text-harteck-red" },
+        { key: "pc.gaming.specs", content: "RTX 5090 | i9-14900KS OC @ 6.2GHz", section: "showcase", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
+        { key: "pc.gaming.features", content: "Cooling custom loop | Silent operation | 360Hz ready", section: "showcase", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
+        
+        { key: "pc.ai.title", content: "AI POWERHOUSE", section: "showcase", elementType: "heading", fontSize: "text-xl", fontWeight: "font-bold", textColor: "text-harteck-red" },
+        { key: "pc.ai.specs", content: "4x RTX 4090 | AMD Threadripper PRO", section: "showcase", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
+        { key: "pc.ai.features", content: "256GB ECC RAM | NVMe RAID | 24/7 validated", section: "showcase", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
         
         // Manifesto Section
-        { key: "manifesto.title", content: "O que nos move", section: "manifesto", elementType: "heading", fontSize: "text-4xl", fontWeight: "font-bold", textColor: "text-white", margin: "mb-8" },
-        { key: "manifesto.text", content: "Na HTK Corp, não vendemos promessas. Vendemos performance real, testada e garantida. Cada componente é escolhido criteriosamente, cada build passa por stress tests rigorosos.", section: "manifesto", elementType: "paragraph", fontSize: "text-xl", textColor: "text-gray-400", lineHeight: "leading-relaxed" },
+        { key: "manifesto.title", content: "Nós acreditamos que computadores não são", section: "manifesto", elementType: "heading", fontSize: "text-4xl md:text-5xl", fontWeight: "font-bold", textColor: "text-white" },
+        { key: "manifesto.title.accent", content: "caixinhas com peças", section: "manifesto", elementType: "text", textColor: "text-harteck-red" },
+        { key: "manifesto.text1", content: "São instrumentos de precisão.", section: "manifesto", elementType: "paragraph", fontSize: "text-2xl", textColor: "text-gray-400" },
+        { key: "manifesto.text2", content: "Acreditamos que performance não se compra: se constrói, se valida, se prova.", section: "manifesto", elementType: "paragraph", fontSize: "text-xl", textColor: "text-gray-400" },
+        { key: "manifesto.text3", content: "Fomos formados na bancada — onde números são medidos, não prometidos.", section: "manifesto", elementType: "paragraph", fontSize: "text-xl", textColor: "text-gray-400" },
+        { key: "manifesto.text4", content: "É por isso que cada máquina da Harteck nasce com três princípios:", section: "manifesto", elementType: "paragraph", fontSize: "text-xl", textColor: "text-gray-400" },
+        
+        { key: "manifesto.principle1.title", content: "Escolha cirúrgica de componentes", section: "manifesto", elementType: "heading", fontSize: "text-xl", fontWeight: "font-bold" },
+        { key: "manifesto.principle1.desc", content: "Não é hype; é engenharia.", section: "manifesto", elementType: "text", textColor: "text-gray-400" },
+        { key: "manifesto.principle2.title", content: "Integração meticulosa", section: "manifesto", elementType: "heading", fontSize: "text-xl", fontWeight: "font-bold" },
+        { key: "manifesto.principle2.desc", content: "Hardware, firmware e software afinados como um único sistema.", section: "manifesto", elementType: "text", textColor: "text-gray-400" },
+        { key: "manifesto.principle3.title", content: "Validação em carga real", section: "manifesto", elementType: "heading", fontSize: "text-xl", fontWeight: "font-bold" },
+        { key: "manifesto.principle3.desc", content: "Benchmarks, stress, telemetria e ajustes finos até o último MHz estável.", section: "manifesto", elementType: "text", textColor: "text-gray-400" },
         
         // CTA Final
-        { key: "cta.final.title", content: "Pronto para performance real?", section: "cta", elementType: "heading", fontSize: "text-5xl", fontWeight: "font-bold", textColor: "text-white" },
-        { key: "cta.final.subtitle", content: "Agende uma consultoria técnica gratuita", section: "cta", elementType: "text", fontSize: "text-xl", textColor: "text-gray-400", margin: "mt-4" },
-        { key: "cta.final.button", content: "Falar com especialista →", section: "cta", elementType: "button", bgColor: "bg-harteck-red", textColor: "text-white", padding: "px-8 py-4", fontSize: "text-lg", fontWeight: "font-medium", hover: "hover:bg-harteck-red-light" },
+        { key: "cta.title", content: "Pronto para", section: "cta", elementType: "heading", fontSize: "text-5xl md:text-7xl", fontWeight: "font-bold", textColor: "text-white" },
+        { key: "cta.title.accent", content: "performance real", section: "cta", elementType: "text", textColor: "text-transparent bg-clip-text bg-gradient-to-r from-harteck-red via-harteck-red-light to-harteck-red" },
+        { key: "cta.subtitle", content: "Agende uma consultoria técnica gratuita. Vamos entender sua necessidade e construir a máquina exata para seu caso de uso.", section: "cta", elementType: "paragraph", fontSize: "text-xl md:text-2xl", textColor: "text-gray-400" },
+        { key: "cta.button", content: "Falar com especialista →", section: "cta", elementType: "button", bgColor: "bg-harteck-red", textColor: "text-white", padding: "px-12 py-6", fontSize: "text-xl", fontWeight: "font-bold", hover: "hover:bg-harteck-red-light" },
         
         // Footer
-        { key: "footer.tagline", content: "Performance que existe fora do PowerPoint.", section: "footer", elementType: "text", fontSize: "text-sm", textColor: "text-gray-500" },
-        { key: "footer.copyright", content: "© 2025 HTK Corp. Todos os direitos reservados.", section: "footer", elementType: "text", fontSize: "text-sm", textColor: "text-gray-600" }
+        { key: "footer.brand", content: "HTK", section: "footer", elementType: "text", fontSize: "text-3xl", fontWeight: "font-bold" },
+        { key: "footer.brand.accent", content: "CORP", section: "footer", elementType: "text", textColor: "text-harteck-red" },
+        { key: "footer.division", content: "Uma divisão Harteck", section: "footer", elementType: "text", fontSize: "text-sm", textColor: "text-gray-400" },
+        { key: "footer.tagline", content: "Teclab | Overclock & Modding desde 2010", section: "footer", elementType: "text", fontSize: "text-sm", textColor: "text-gray-500" },
+        { key: "footer.motto", content: "Performance validada. Números medidos. Recordes quebrados.", section: "footer", elementType: "text", fontSize: "text-xs", textColor: "text-gray-600" }
       ]
 
       for (const element of elements) {
