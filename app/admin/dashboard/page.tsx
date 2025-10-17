@@ -116,12 +116,20 @@ export default function AdminDashboard() {
           <h1 className="text-2xl font-bold">
             HTK <span className="text-harteck-red">ADMIN</span>
           </h1>
-          <button
-            onClick={handleLogout}
-            className="px-4 py-2 text-sm border border-harteck-red/30 hover:border-harteck-red transition-colors"
-          >
-            Sair
-          </button>
+          <div className="flex gap-3">
+            <button
+              onClick={() => router.push("/admin/editor")}
+              className="px-4 py-2 text-sm border border-harteck-red/30 hover:border-harteck-red transition-colors"
+            >
+              ✨ Editor Visual
+            </button>
+            <button
+              onClick={handleLogout}
+              className="px-4 py-2 text-sm border border-harteck-red/30 hover:border-harteck-red transition-colors"
+            >
+              Sair
+            </button>
+          </div>
         </div>
       </header>
 

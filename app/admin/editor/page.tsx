@@ -110,12 +110,20 @@ export default function VisualEditor() {
             <h1 className="text-xl font-bold">
               HTK <span className="text-harteck-red">EDITOR</span>
             </h1>
-            <button
-              onClick={handleLogout}
-              className="text-xs px-3 py-1 border border-harteck-red/30 hover:border-harteck-red transition-colors"
-            >
-              Sair
-            </button>
+            <div className="flex gap-2">
+              <button
+                onClick={() => router.push("/admin/dashboard")}
+                className="text-xs px-3 py-1 border border-harteck-red/30 hover:border-harteck-red transition-colors"
+              >
+                📊 Dashboard
+              </button>
+              <button
+                onClick={handleLogout}
+                className="text-xs px-3 py-1 border border-harteck-red/30 hover:border-harteck-red transition-colors"
+              >
+                Sair
+              </button>
+            </div>
           </div>
 
           {/* Search */}
